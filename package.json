@@ -1,0 +1,51 @@
+{
+    "name": "@zardoy/electron-esbuild",
+    "version": "0.0.0-build",
+    "main": "./index.js",
+    "types": "./index.d.ts",
+    "author": "Vitaly Turovsky <vital2580@icloud.com>",
+    "license": "MIT",
+    "files": [
+        "build"
+    ],
+    "bin": {
+        "electron-esbuild": "./bin.js"
+    },
+    "scripts": {
+        "prepublishOnly": "tsc",
+        "watch": "tsc -w",
+        "see-local": "cd example/withoutConfig && node ../../build/bin.js --debug",
+        "see-local-with-config": "cd example/withConfig && node ../../build/bin.js --debug",
+        "lint": "eslint src/**"
+    },
+    "devDependencies": {
+        "@types/node": "^18.0.0",
+        "@zardoy/tsconfig": "^1.2.1",
+        "electron": "^13.2.1",
+        "eslint": "^8.18.0",
+        "eslint-config-zardoy": "^0.2.11",
+        "modify-json-file": "^1.1.0",
+        "typescript": "^4.3.5"
+    },
+    "dependencies": {
+        "electron-is-dev": "^2.0.0",
+        "electron-run": "2.3.1",
+        "esbuild": "^0.14.48",
+        "execa": "^5.1.1",
+        "github-remote-info": "^1.0.2",
+        "lilconfig": "^2.0.5",
+        "rambda": "^7.1.4"
+    },
+    "peerDependencies": {
+        "electron": ">=10"
+    },
+    "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "proseWrap": "never",
+        "tabWidth": 4,
+        "trailingComma": "all",
+        "arrowParens": "avoid",
+        "printWidth": 160
+    }
+}
